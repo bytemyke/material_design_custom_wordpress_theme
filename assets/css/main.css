@@ -1,0 +1,242 @@
+/*VARIABLES 
+*/
+:root {
+  --default-font-color: #4D4D57;
+  --color1: #FBFBFB;
+  --color2: #26a69a;
+  --color3: #FFF9C4;
+  --color4: #FF8A65;
+  --color5: #65daff;
+  --color6: #69F0AE;
+
+  /* --colorSwap1: #FFF9C4; */
+}
+
+[data-theme="dark"] {
+  --default-font-color: #FBFBFB;
+  --color1: #263238;
+  --color2: #78909C;
+  --color3: #03A9F4;
+  --color4: #039BE5;
+  --color5: #80DEEA;
+  --color6: #F64271;
+
+  /* --colorSwap1: #263238; */
+
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 100;
+  }
+}
+
+/*
+colors
+*/
+.bg-color1 {
+  background-color: color1;
+}
+
+.bg-color2 {
+  background-color: color2;
+
+}
+
+.bg-color3 {
+  background-color: color3;
+
+}
+
+.bg-color4 {
+  background-color: color4;
+
+}
+
+.bg-color5 {
+  background-color: color5;
+
+}
+/* Animation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@keyframes moveTextDown {
+  from {transform: translateY(0px); position: relative;}
+  to {transform: translateY(200px); position: absolute;}
+}
+@keyframes anim-popoutin {
+  0% {
+    color: black;
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    color: red;
+    transform: scale(2);
+    opacity: 1;
+    text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    color: black;
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    /* animate nothing to add pause at the end of animation */
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+}
+/* General
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.header,
+header * {
+  background-color: var(--color2);
+}
+
+header .container nav * {
+  color: var(--default-font-color);
+}
+
+* {
+  background-color: var(--color1);
+  color: var(--default-font-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--default-font-color);
+}
+
+#theme_switcher {
+  position: absolute;
+  right: 6%;
+  top: 2.5%;
+}
+
+header nav {
+  box-shadow: none;
+}
+
+body footer.page-footer {
+  position: relative;
+  background-color: var(--color1);
+
+  *:not(.footer-copyright *) {
+    background-color: var(--color1);
+  }
+}
+
+body footer .footer-copyright {
+  position: relative;
+
+}
+
+body footer #footer-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+body footer #footer-overlay2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  /* cursor: pointer; */
+}
+
+.card {
+  background-color: var(--color1);
+  border-radius: 5px;
+
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .tag {
+    transition: all .2s ease-in-out;
+    margin: 5px;
+    background-color: var(--color4);
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+.card {
+  position: relative;
+  .card-overlay {
+    /* background-color: rgba(0, 0, 0, 2); */
+    z-index: 2;
+    position: absolute;
+    opacity: .95;
+    transition: all 4s linear 1s;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 0;
+    transition: height .5s ease;
+    .card-content{
+      position: relative;
+    }
+  }
+  .card-content{
+    position: relative;
+  }
+  .card-title.static{
+    transition: opacity .1s ease .1s;
+  }
+  .cardOverlayContainer {
+    position: relative;
+     &:hover {
+      .card-overlay {
+        height: 100%;
+      }
+      .card-title.static{
+        /* position: relative; */
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/*
+.flexRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+/* .flexRow div{
+  height:100%;
+  justify-self: stretch;
+  flex:3; 
+} */
